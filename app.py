@@ -13,7 +13,9 @@ app = Flask(__name__)
 classes = ['sailboat', 'catamaran', 'motorboat']
 export_file_url = 'https://drive.google.com/uc?export=download&id=1kSUp-9Q2f6fUPx4133sKmq2_jp0Ft1bj'
 export_file_name = 'export.pkl'
-path = Path(__file__).parent
+path = Path('.')
+
+learn = load_learner(path)
 
 async def download_file(url, dest):
     if dest.exists(): return
@@ -35,10 +37,10 @@ async def setup_learner():
         else:
             raise
 
-loop = asyncio.get_event_loop()
-tasks = [asyncio.ensure_future(setup_learner())]
-learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
-loop.close()
+#loop = asyncio.get_event_loop()
+#tasks = [asyncio.ensure_future(setup_learner())]
+#learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
+#loop.close()
 
 @app.route('/')
 def hello_world():
