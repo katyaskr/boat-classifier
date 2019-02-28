@@ -1,13 +1,13 @@
 from flask import Flask, request, render_template
 
-import aiohttp, asyncio
+#import aiohttp, asyncio
 import requests, os
 from io import BytesIO
 
 # fastai
-from fastai import *
-from fastai.vision import *
-import fastai
+#from fastai import *
+#from fastai.vision import *
+#import fastai
 
 app = Flask(__name__)
 classes = ['sailboat', 'catamaran', 'motorboat']
