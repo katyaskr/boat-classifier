@@ -25,7 +25,7 @@ def predict():
         url = request.args['url']
         response = requests.get(url)
 
-        img_class = open_image(BytesIO(response.content))
+        #img_class = open_image(BytesIO(response.content))
         #pred_class,pred_idx,outputs = learn.predict(img_class)
 
     return render_template('predict.html', url = url, boat_type = pred_class)
